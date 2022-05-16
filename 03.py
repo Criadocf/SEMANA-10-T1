@@ -1,17 +1,24 @@
-n = int(input())
-maior = n
-menor = n
+def maior(n1, n2):
+    return n1 if n1 > n2 else n2
 
-while n != 0:
-        n = int(input())
-        if n > maior and n != 0:
-          maior = n
-        if n < menor and n != 0:
-          if n != 0:
-            menor = n
 
-        
-        
-if maior != 0 and menor != 0:                   
-  print(maior)
-  print(menor)
+def menor(n1, n2):
+    return n1 if n1 < n2 else n2
+
+
+opt = True
+major = -999999999
+minor = 999999999
+
+
+while opt:
+    n = int(input())
+    if n == 0:
+        opt = False
+    else:
+        major = maior(n, major)
+        minor = menor(n, minor)
+
+if major != -999999999 or minor != 999999999:
+    print(major)
+    print(minor)
